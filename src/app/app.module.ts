@@ -11,20 +11,25 @@ import {RequestResetComponent} from './request-reset/request-reset.component';
 import {RespondResetComponent} from './respond-reset/respond-reset.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NavbarComponent} from './navbar/navbar.component';
+import {BeforeLoginService} from './Services/before-login.service';
+import {AfterLoginService} from './Services/after-login.service';
 
 const appRoutes: Routes = [
 
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [BeforeLoginService],
   },
   {
     path: 'signup',
-    component: SignUpComponent
+    component: SignUpComponent,
+    canActivate: [BeforeLoginService],
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AfterLoginService],
   },
   {
     path: 'request-password-reset',
