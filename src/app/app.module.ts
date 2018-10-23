@@ -4,12 +4,13 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule, NgForm} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {ProfileComponent} from './profile/profile.component';
 import {RequestResetComponent} from './request-reset/request-reset.component';
 import {RespondResetComponent} from './respond-reset/respond-reset.component';
 import {HttpClientModule} from '@angular/common/http';
+import {NavbarComponent} from './navbar/navbar.component';
 
 const appRoutes: Routes = [
 
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
   },
   {
     path: 'request-password-reset',
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     RequestResetComponent,
     RespondResetComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
