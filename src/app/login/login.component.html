@@ -1,0 +1,39 @@
+<div class="mt-4 col-8 offset-2">
+
+  <div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+
+      <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+
+        <div class="alert alert-danger text-center" [hidden]="!error">{{ error }}</div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-4 col-form-label">Email</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="form.email" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="password" class="col-sm-4 col-form-label">Contrase&ntilde;a</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" name="password" placeholder="Password"
+                   [(ngModel)]="form.password" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10 offset-2">
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Iniciar Sesi&oacute;n</button>
+            <a routerLink="/signup" class="btn btn-primary float-right">Registrarse</a>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
